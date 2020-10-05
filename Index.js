@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
+const render = require('./lib/render.js');
 
 // Employee choice list
 const employeeChoices = [{
@@ -191,6 +192,8 @@ const pickEmployee = () => {
                 promptEngineer();
             } else if (employeeChoice === 'Intern') {
                 promptIntern();
+            } else if (employeeChoice === 'Finish') {
+                finish();
             }
         })
 };
@@ -222,11 +225,15 @@ const promptEngineer = () => {
 const promptIntern = () => {
     inquirer.prompt(internQuestions)
         .then(answers => {
-            const intern = new Intern (answers.name, answers.id, answers,email, answers.school);
+            const intern = new Intern (answers.name, answers.id, answers.email, answers.school);
             employeeList.push(intern);
 
             pickEmployee();
         });
+}
+
+const finish = () => {
+    
 }
 
 pickEmployee();
