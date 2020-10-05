@@ -3,6 +3,7 @@ const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const render = require('./lib/render.js');
+const fs = require('fs');
 
 // Employee choice list
 const employeeChoices = [{
@@ -204,7 +205,6 @@ const promptManager = () => {
         .then(answers => {
             const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
             employeeList.push(manager);
-            console.log(manager);
 
             pickEmployee();
         });
@@ -233,7 +233,17 @@ const promptIntern = () => {
 }
 
 const finish = () => {
-    
-}
+    const generatedHtml = render(employeeList);
+
+    fs.writeFile('./dist/index.html', generatedHtml, err => {
+        if (err) throw err;
+
+        console.log('HTML has been generated in the dist folder!');
+    });
+
+    fs.copyFile('./src/style.css', './dist/style.css', err => {
+        if (err) throw err;
+    });
+};
 
 pickEmployee();
