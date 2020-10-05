@@ -6,7 +6,7 @@ The purpose of the team profile genertor is to generate a webpage that displays 
 ## Screenshot and Walkthrough
 <img src="./images/screenshot.jpg" width="400px;">
 
-[Walkthrough Video](https://drive.google.com/file/d/1m1J7iSQg5I9y2l4xOs6ENt1P99kx0Jk5/view)
+[Walkthrough Video](https://drive.google.com/file/d/1q13fOhiGMvP2EB6o0qqiiBnimXtQB7GK/view)
 
 ## Links
 [GitHub Repo](github.com/apklopfenstein/team-profile-generator)
