@@ -232,6 +232,7 @@ const promptIntern = () => {
         });
 }
 
+// Finish input and generate HTML
 const finish = () => {
     const generatedHtml = render(employeeList);
 
